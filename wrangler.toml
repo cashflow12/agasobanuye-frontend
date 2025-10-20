@@ -1,8 +1,15 @@
 name = "agasobanuye-frontend"
 compatibility_date = "2025-10-20"
-type = "javascript"
 
-site = { 
-  bucket = "./out",
-  entry-point = "."
-}
+[pages]
+# The directory containing your static assets after build
+bucket = ".next"
+
+# Command to build your project
+build.command = "npm run build"
+
+# Output directory for the build (optional, as we're specifying bucket)
+build.output_dir = ".next"
+
+# Use the newer modules format (optional but recommended)
+compatibility_flags = ["nodejs_compat"]
