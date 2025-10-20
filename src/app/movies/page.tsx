@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import MovieListClient from './MovieListClient';
 
+export const runtime = 'edge';
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
 
