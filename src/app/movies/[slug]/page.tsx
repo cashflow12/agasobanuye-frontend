@@ -8,6 +8,15 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 export async function generateMetadata({ params }: { 
   params: { slug: string } 
 }): Promise<Metadata> {
+  // ADD THIS BUILD-TIME CHECK
+  if (process.env.NODE_ENV === 'production' && typeof window === 'undefined') {
+    const title = decodeURIComponent(params.slug || '');
+    return {
+      title: `${title} | Agasobanuye`,
+      description: `Watch ${title} on Agasobanuye`,
+    };
+  }
+
   if (!params?.slug) {
     return {
       title: "Movie | Agasobanuye",
