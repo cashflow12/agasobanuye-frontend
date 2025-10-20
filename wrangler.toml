@@ -1,19 +1,17 @@
 name = "agasobanuye-frontend"
 compatibility_date = "2025-10-20"
 
-[pages]
-# The directory containing your static assets after build
-bucket = ".next"
+# Required for Pages deployment
+pages_build_output_dir = ".next"
 
-# Command to build your project
-build.command = "npm run build"
+# Optional: Build command
+[pages.build]
+command = "npm run build"
 
-# Output directory for the build
-build.output_dir = ".next"
+# Optional: Environment variables
+[vars]
+NODE_ENV = "production"
 
-# Use the newer modules format
-compatibility_flags = ["nodejs_compat"]
-
-# Environment-specific settings (optional)
+# Optional: Environment-specific settings
 [env.production]
-route = "https://www.agasobanuyefilmz.com/*"
+pages_build_output_dir = ".next"
