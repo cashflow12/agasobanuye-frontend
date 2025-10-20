@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Navbar from "../navbar";
-
+export const runtime = 'edge';
 interface Series {
   id: number;
   title: string;
