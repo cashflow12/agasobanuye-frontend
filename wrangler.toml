@@ -8,8 +8,12 @@ bucket = ".next"
 # Command to build your project
 build.command = "npm run build"
 
-# Output directory for the build (optional, as we're specifying bucket)
+# Output directory for the build
 build.output_dir = ".next"
 
-# Use the newer modules format (optional but recommended)
+# Use the newer modules format
 compatibility_flags = ["nodejs_compat"]
+
+# Environment-specific settings (optional)
+[env.production]
+route = "https://www.agasobanuyefilmz.com/*"
