@@ -14,13 +14,19 @@ const getAbsoluteUrl = (path: string) => {
 export async function generateMetadata({ params }: { 
   params: { slug: string } 
 }): Promise<Metadata> {
+  const defaultMetadata = {
+    title: "Series | Agasobanuye",
+    description: "Explore series on Agasobanuye"
+  };
+
   // Return default metadata during build to avoid API calls
-  if (process.env.NODE_ENV === 'production' && typeof window === 'undefined') {
+  if (process.env.NEXT_PUBLIC_NODE_ENV === 'production' && typeof window === 'undefined') {
+    const title = decodeURIComponent(params.slug || '');
     return {
-      title: "Movie | Agasobanuye",
-      description: "Explore movies on Agasobanuye",
+      title: `${title} | Agasobanuye`,
+      description: `Watch ${title} on Agasobanuye`,
     };
-  
+  } // <-- THIS CLOSING BRACE WAS MISSING
 
   if (!params?.slug) {
     return defaultMetadata;
