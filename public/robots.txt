@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.agasobanuyefilmz.com
+
+# Sitemaps
+Sitemap: https://www.agasobanuyefilmz.com/sitemap.xml
