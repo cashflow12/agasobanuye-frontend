@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: {
   };
 
   // Return default metadata during build to avoid API calls
-  if (process.env.NEXT_PUBLIC_NODE_ENV === 'production' && typeof window === 'undefined') {
+  if (process.env.NODE_ENV === 'production' && typeof window === 'undefined') {
     const title = decodeURIComponent(params.slug || '');
     return {
       title: `${title} | Agasobanuye`,
       description: `Watch ${title} on Agasobanuye`,
     };
-  } // <-- THIS CLOSING BRACE WAS MISSING
+  }
 
   if (!params?.slug) {
     return defaultMetadata;
