@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./navbar";
 import FloatingSocial from "./components/FloatingSocial";
 
+export const runtime = 'edge';
+
 // Interfaces remain unchanged
 interface Genre {
   id: number;
