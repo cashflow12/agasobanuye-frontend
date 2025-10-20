@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import SeriesListClient from './SeriesClient';
 
+export const runtime = 'edge';
 export const dynamic = 'force-dynamic'; // Add this line
 
 
