@@ -5,6 +5,8 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { FaPlay, FaHeart, FaRegHeart, FaArrowLeft, FaDownload, FaStar, FaLanguage, FaCalendarAlt } from "react-icons/fa";
 
+export const runtime = 'edge';
+
 interface MovieDetail {
   id: number;
   title: string;
