@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import MovieClient from './MovieClient';
 
+export const runtime = 'edge';
+
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
 export async function generateMetadata({ params }: { 
