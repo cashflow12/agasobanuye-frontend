@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import SeriesDetailClient from './SeriesDetailClient';
 
+export const runtime = 'edge';
+
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
 // Helper function to construct absolute URL for paths
