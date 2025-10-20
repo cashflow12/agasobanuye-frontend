@@ -6,6 +6,8 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../navbar";
 
+export const runtime = 'edge';
+
 // Set the base URL for axios
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000",
