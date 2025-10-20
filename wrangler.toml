@@ -1,3 +1,8 @@
 name = "agasobanuye-frontend"
 compatibility_date = "2025-10-20"
-main = ".vercel/output/functions/index.func/entry.js"
+type = "javascript"
+
+site = { 
+  bucket = "./out",
+  entry-point = "."
+}
