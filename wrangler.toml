@@ -1,17 +1,6 @@
 name = "agasobanuye-frontend"
 compatibility_date = "2025-10-20"
-
-# Required for Pages deployment
 pages_build_output_dir = ".next"
 
-# Optional: Build command
-[pages.build]
-command = "npm run build"
-
-# Optional: Environment variables
-[vars]
-NODE_ENV = "production"
-
-# Optional: Environment-specific settings
 [env.production]
 pages_build_output_dir = ".next"
