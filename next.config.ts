@@ -1,19 +1,36 @@
 import type { NextConfig } from "next";
-
 const nextConfig: NextConfig = {
+ 
   images: {
-    domains: ['image.tmdb.org', 'media.themoviedb.org'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**',
+      },
+    ],
+    // Add these for production
+    unoptimized: process.env.NODE_ENV === 'production', // Disable optimization on Fly.io
+    minimumCacheTTL: 60,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
+  // Increase memory limit
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '10mb',
+    },
   },
+
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: true, // 👈 Add this line
-  },
+  ignoreBuildErrors: true,
+},
+
+  // Output standalone for better Fly.io compatibility
+  output: 'export',
 };
 
 export default nextConfig;
